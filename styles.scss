@@ -248,6 +248,15 @@ main{
     form{
       border: #ebebeb solid;
       display: flex;
+      flex-direction: column;
+      label{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+      }
+      button{
+        margin:10px;
+      }
     }    
   }
 }
@@ -265,15 +274,5 @@ footer {
   display: flex;
   height: 100px;
   align-items: center;
-  justify-content: flex-end;
-  img{
-    height: 30px;
-    margin: 1vw;
-    transition: all 0.2s ease;
-
-    &:hover{
-      cursor: pointer;
-      height: 40px;
-    }
-  }
+  justify-content: center;
 }
