@@ -212,6 +212,14 @@ main #projets .projet.details .details a {
   justify-content: center;
   align-items: center;
 }
+main #contact {
+  color: #ebebeb;
+  border: #ebebeb solid;
+}
+main #contact form {
+  border: #ebebeb solid;
+  display: flex;
+}
 
 /* Sections */
 /* Pied de page */

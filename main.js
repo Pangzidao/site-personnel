@@ -17,10 +17,11 @@ const sectionsPos = []
 
 
 sections.forEach(section => sectionsPos.push(section.offsetTop))
-window.scroll({
+
+/*window.scroll({
     top:sectionsPos[1],
     behavior:"smooth"
-})
+})*/
 
 
 window.addEventListener("scroll", () => scrolling())

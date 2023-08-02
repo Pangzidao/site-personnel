@@ -241,6 +241,15 @@ main{
      
     }
   }
+
+  #contact{
+    color: $tertiary-color;
+    border: #ebebeb solid;
+    form{
+      border: #ebebeb solid;
+      display: flex;
+    }    
+  }
 }
 
 /* Sections */
