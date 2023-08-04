@@ -14,6 +14,12 @@
   font-style: normal;
 }
 
+@mixin media-max($_max-width) {
+  @media screen and (max-width: $_max-width) {
+    &{ @content; }
+  }
+}
+
 /* Variables */
 $primary-color: #011627; // Couleur principale
 $secondary-color: #59c3c3; // Couleur secondaire
@@ -43,43 +49,93 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 100px;
   z-index: 3;
+
 
   h1{
     color: $quaternary-color;
   }
 
   nav {
-    width: 50%;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    transition: overflown 0.5 ease;
+    &.header-nav-dropdown{
+      @include media-max(768px) {
+        overflow:visible;
+        ul{
+          background-color: #59c3c3;
+        }
+      }
+      
+    }
+
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      height: 100%;
       display: flex;
       justify-content: space-around;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      @include media-max(768px) {
+        flex-direction: column;
+        height: 500%;        
+      }
+
       li {
-        display: inline-block;
+        display: flex;
         margin-right: 10px;
-        
-        a {
-          color: $tertiary-color;
-          text-decoration: none;
-          transition: all 0.5s ease;
-        
-          &:hover {
-            color:$secondary-color;
-            text-decoration: none;
-          }
+        height: 80%;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.active{
+          border: $tertiary-color solid;
+          border-radius: 20px;
+        }
+
+        @include media-max(768px) {
+          border: none !important;
+          width: 70%;
           &.active{
-            font-size: 32px;
-            order: 1;
-            color: $secondary-color;
+            order:-1;
           }
+          a{
+            font-size: larger;
+          }
+          /*&:nth-child(2){
+            display: none;
+          }
+          &:nth-child(3){
+            display: none;
+          }
+          &:nth-child(4){
+            display: none;
+          }*/
         }
       }
     }
+  }
+
+  #mobile-menu{
+    display: none;
+    @include media-max(768px){
+      display: block;
+      color: #ebebeb;
+      font-size: 32px;
+      position: absolute;
+      right: 100px;      
+    }
+    
   }
 }
 
@@ -126,6 +182,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     h2{
       font-size: 64px;
       color: $secondary-color;

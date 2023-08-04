@@ -1,20 +1,33 @@
 console.log("hello world!");
 
 //Dom selection 
-const links = document.querySelectorAll("a")
+const links = document.querySelectorAll("li")
 const wheelPictureDom = document.getElementById("wheelPicture")
 const projectsSectionDom = document.getElementById("projets")
 const sections = document.querySelectorAll("section")
 const projets = document.querySelectorAll(".projet")
+const mobileMenuDom = document.getElementById("mobile-menu")
+const headerNavDom = document.getElementById("header-nav")
 
-console.log(projets)
+
+mobileMenuDom.addEventListener("click", () => mobileMenuDisplay());
 
 projets.forEach(p => p.addEventListener("mouseover", () => projetDetails(p)));
 projets.forEach(p => p.addEventListener("mouseout", () => projetDetails()));
 
 const sectionsPos = []
 
+let navMenuDrop = false
 
+function mobileMenuDisplay() {
+    if (navMenuDrop) {
+        navMenuDrop = false
+        headerNavDom.classList.remove("header-nav-dropdown")
+    }else {
+        navMenuDrop = true
+        headerNavDom.classList.add("header-nav-dropdown")
+    }
+}
 
 sections.forEach(section => sectionsPos.push(section.offsetTop))
 
@@ -28,13 +41,16 @@ window.addEventListener("scroll", () => scrolling())
 
 function scrolling(){
     sectionsPos.map((sectionPos, i) => {
-        if (scrollY + 400 > sectionPos){
+        if (scrollY +400 > sectionPos){
             currentSection(links[i])
         }
     })
 }
 
-links.forEach(l => l.addEventListener('click', ()=> scrolling() ))
+links.forEach(l => l.addEventListener('click', ()=> {
+    scrolling()
+    mobileMenuDisplay()
+}))
 
 function currentSection(l) {
     links.forEach(l => l.classList.remove('active'));

@@ -10,15 +10,18 @@
 <body>
     <header id="header">
         <a href="#"><h1>NLJ</h1></a>
-        <nav>
+        <nav id="header-nav">
             <ul>
+                <li ><a href="#">Accueil</a></li>
                 <li ><a href="#a-propos-de-moi">À propos de moi</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="CV - Développeur web.pdf">CV</a></li>
             </ul>
         </nav>
+        <i class="fa-solid fa-bars" id="mobile-menu"></i>
     </header>
+  
     <main>
         <aside id="social-medias-links">
             <img src="./images/github-mark-white.png" al="github link">
@@ -90,15 +93,15 @@
         </section>
         
         <section id="contact">
-            <!-- modify this form HTML and place wherever you want your form -->
+            
             <form action="https://formspree.io/f/maygqdzz" method="POST">
                 <label>Your email <input type="email" name="email"></label>
                 <label>Your message <textarea name="message"></textarea></label>
-                <!-- your other form fields go here -->
                 <button type="submit">Send</button>
             </form>
         </section>
     </main>
+-->
     <script src="main.js"></script>
     <footer>
         <p>Développer par Nicolas Le Jeune</p>
