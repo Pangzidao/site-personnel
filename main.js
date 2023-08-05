@@ -19,12 +19,17 @@ const sectionsPos = []
 
 let navMenuDrop = false
 
+mobileMenuDom.innerHTML = '<i class="fa-solid fa-bars"></i>'
+
+
 function mobileMenuDisplay() {
     if (navMenuDrop) {
         navMenuDrop = false
+        mobileMenuDom.innerHTML = '<i class="fa-solid fa-bars"></i>'
         headerNavDom.classList.remove("header-nav-dropdown")
     }else {
         navMenuDrop = true
+        mobileMenuDom.innerHTML = '<i class="fa-solid fa-xmark"></i>'
         headerNavDom.classList.add("header-nav-dropdown")
     }
 }
