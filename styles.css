@@ -59,13 +59,13 @@ header nav {
     justify-content: center;
     width: 100%;
   }
-}
-header nav.header-nav-dropdown {
-  overflow: visible;
-}
-header nav.header-nav-dropdown ul {
-  background-color: #59c3c3;
-  width: 100%;
+  header nav.header-nav-dropdown {
+    overflow: visible;
+  }
+  header nav.header-nav-dropdown ul {
+    background-color: #59c3c3;
+    width: 100%;
+  }
 }
 header nav ul {
   list-style: none;
