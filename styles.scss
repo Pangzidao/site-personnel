@@ -56,9 +56,6 @@ header {
   width: 100%;
   height: 100px;
   z-index: 3;
-  border-bottom: $tertiary-color solid;
-
-
 
   h1{
     color: $secondary-color;
@@ -199,9 +196,16 @@ main{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    img{
-      width: 20%;
-      margin: 5%;
+
+    @include media-max(768px) {
+      display: none;
+    }
+
+    a{
+      margin: 20%;
+      img{
+        width: 28px;
+      }
     }
     &::after{
       content: '';
@@ -217,9 +221,9 @@ main{
 
   #email{
     right:0;
-    p{
+    a{
       transform: rotate(0.25turn);
-      margin-bottom: 120px;
+      margin-bottom: 125px;
     }
   }
 
@@ -228,36 +232,44 @@ main{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    border: #ebebeb solid;
     h2{
-      font-size: 64px;
-      color: $secondary-color;
-      
-    }
-
-   
-  
-    p{
+      font-size: 4vw;
       color: $tertiary-color;
+    }
+   
+    p{
+      color: $secondary-color;
       margin: 0;
+      font-size: 1.5vw;
       &:nth-of-type(2){
-        font-size: larger;
+        font-size: 2vw;
+        font-family: "RobotoBold";
+        color: $quaternary-color;
+      }
+    }
+    #wheelPictureContainer{
+      border: $tertiary-color solid 8px;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      object-fit: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      img{
+        height: 100%;
       }
     }
 
-    img{
-      height: 300px;
-      width: 300px;
-      margin-right: 50px;
-      margin-top: 50px;
-      border: $tertiary-color solid 8px;
-      border-radius: 10px;
-    }
+   
   }
   section {
     padding: 20px;
     margin-bottom: 30px;
     padding-top:200px;
-    width: 60vw;
+    width: 70vw;
     min-height: 70vh;
   }
 
@@ -385,9 +397,37 @@ footer {
   padding: 10px;
   color: #fff;
   text-align: center;
-  width: 95%;
+  width: 100%;
+  height: 120px;
   display: flex;
-  height: 100px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  a{
+    display: none;
+  }
+
+  @include media-max(768px) {
+    border-top: $tertiary-color solid;
+    height: fit-content;
+    #links{
+      display: flex;
+      width: 30%;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      a{
+        display: flex;
+        img{
+          width: 28px;
+        }
+      }
+    }
+
+    a{
+      display: flex;
+      margin-top: 15px;
+    }
+
+    
+  }
 }

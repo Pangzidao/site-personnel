@@ -41,7 +41,6 @@ header {
   width: 100%;
   height: 100px;
   z-index: 3;
-  border-bottom: #ebebeb solid;
 }
 header h1 {
   color: #64FFDA;
@@ -172,9 +171,16 @@ main aside {
   align-items: center;
   flex-direction: column;
 }
-main aside img {
-  width: 20%;
-  margin: 5%;
+@media screen and (max-width: 768px) {
+  main aside {
+    display: none;
+  }
+}
+main aside a {
+  margin: 20%;
+}
+main aside a img {
+  width: 28px;
 }
 main aside::after {
   content: "";
@@ -188,40 +194,51 @@ main #social-medias-links {
 main #email {
   right: 0;
 }
-main #email p {
+main #email a {
   transform: rotate(0.25turn);
-  margin-bottom: 120px;
+  margin-bottom: 125px;
 }
 main #hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border: #ebebeb solid;
 }
 main #hero h2 {
-  font-size: 64px;
-  color: #64FFDA;
+  font-size: 4vw;
+  color: #ebebeb;
 }
 main #hero p {
-  color: #ebebeb;
+  color: #64FFDA;
   margin: 0;
+  font-size: 1.5vw;
 }
 main #hero p:nth-of-type(2) {
-  font-size: larger;
+  font-size: 2vw;
+  font-family: "RobotoBold";
+  color: #8892B0;
 }
-main #hero img {
-  height: 300px;
-  width: 300px;
-  margin-right: 50px;
-  margin-top: 50px;
+main #hero #wheelPictureContainer {
   border: #ebebeb solid 8px;
-  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+main #hero #wheelPictureContainer img {
+  height: 100%;
 }
 main section {
   padding: 20px;
   margin-bottom: 30px;
   padding-top: 200px;
-  width: 60vw;
+  width: 70vw;
   min-height: 70vh;
 }
 main #a-propos-de-moi #profil {
@@ -330,9 +347,36 @@ footer {
   padding: 10px;
   color: #fff;
   text-align: center;
-  width: 95%;
+  width: 100%;
+  height: 120px;
   display: flex;
-  height: 100px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+footer a {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    border-top: #ebebeb solid;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer #links {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  footer #links a {
+    display: flex;
+  }
+  footer #links a img {
+    width: 28px;
+  }
+  footer a {
+    display: flex;
+    margin-top: 15px;
+  }
 }/*# sourceMappingURL=styles.css.map */

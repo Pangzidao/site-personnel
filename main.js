@@ -107,7 +107,7 @@ const heroPics = [
     "./images/hrnet.png",
     "./images/kasa.png",
     "./images/learnathome.png",
-    "./images/ohmyfoodmobile.png",
+    "./images/ohmyfood.png",
     "./images/pacman.png",
     "./images/spinUp.png"    
 ]
