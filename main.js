@@ -8,12 +8,20 @@ const sections = document.querySelectorAll("section")
 const projets = document.querySelectorAll(".projet")
 const mobileMenuDom = document.getElementById("mobile-menu")
 const headerNavDom = document.getElementById("header-nav")
+const projectsTypeDom = document.querySelectorAll(".projects-type")
+const webSectionDom = document.getElementById("web")
+const gamingSectionDom = document.getElementById("gaming")
+const mainDom = document.getElementsByTagName("main")[0]
 
+
+projectsDisplay("webDisplay")
+links[0].classList.add("active");
 
 mobileMenuDom.addEventListener("click", () => mobileMenuDisplay());
 
 projets.forEach(p => p.addEventListener("mouseover", () => projetDetails(p)));
 projets.forEach(p => p.addEventListener("mouseout", () => projetDetails()));
+projectsTypeDom.forEach(p => p.addEventListener("click", ()=> projectsDisplay(p.id)));
 
 const sectionsPos = []
 
@@ -21,16 +29,33 @@ let navMenuDrop = false
 
 mobileMenuDom.innerHTML = '<i class="fa-solid fa-bars"></i>'
 
+function projectsDisplay(p){
+    if (p == "webDisplay"){
+        console.log("display web")
+        webSectionDom.classList.remove("not-displayed")
+        gamingSectionDom.classList.add("not-displayed")
+    }
+
+    if (p == "gamingDisplay"){
+        console.log("display gaming")
+        webSectionDom.classList.add("not-displayed")
+        gamingSectionDom.classList.remove("not-displayed")
+    }
+}
 
 function mobileMenuDisplay() {
     if (navMenuDrop) {
         navMenuDrop = false
         mobileMenuDom.innerHTML = '<i class="fa-solid fa-bars"></i>'
         headerNavDom.classList.remove("header-nav-dropdown")
+        mainDom.style.filter = "blur(0px)";
+
     }else {
         navMenuDrop = true
         mobileMenuDom.innerHTML = '<i class="fa-solid fa-xmark"></i>'
         headerNavDom.classList.add("header-nav-dropdown")
+        mainDom.style.filter = "blur(5px)";
+
     }
 }
 
@@ -54,7 +79,9 @@ function scrolling(){
 
 links.forEach(l => l.addEventListener('click', ()=> {
     scrolling()
-    mobileMenuDisplay()
+    if (window.innerWidth < 768){
+        mobileMenuDisplay()
+    }    
 }))
 
 function currentSection(l) {
@@ -75,9 +102,14 @@ function projetDetails(p){
 
 
 const heroPics = [
-    "./images/github-mark-white.png",
-    "./images/linkedin-xxl.png",
-    "./images/pacman.png"    
+    "./images/booki.png",
+    "./images/gravitus.png",
+    "./images/hrnet.png",
+    "./images/kasa.png",
+    "./images/learnathome.png",
+    "./images/ohmyfoodmobile.png",
+    "./images/pacman.png",
+    "./images/spinUp.png"    
 ]
 
 

@@ -14,6 +14,8 @@
   font-style: normal;
 }
 
+/*mixin for responsive*/
+
 @mixin media-max($_max-width) {
   @media screen and (max-width: $_max-width) {
     &{ @content; }
@@ -22,10 +24,12 @@
 
 /* Variables */
 $primary-color: #011627; // Couleur principale
-$secondary-color: #59c3c3; // Couleur secondaire
+$secondary-color: #64FFDA; // Couleur secondaire
 $tertiary-color: #ebebeb;
-$quaternary-color: #c33149;
+$quaternary-color: #8892B0;
+
 /* Styles généraux */
+
 body {
   font-family: "RobotoRegular", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
@@ -43,7 +47,7 @@ h2, h3 ,p, a, li, img {
 /* En-tête */
 header {
   background-color: $primary-color;
-  padding: 10px;
+  padding: 1%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -57,12 +61,13 @@ header {
 
 
   h1{
-    color: $quaternary-color;
+    color: $secondary-color;
+    margin-left: 50px;
   }
 
   nav {
     height: 100%;
-    width: 70%;
+    width: 80%;
     overflow: hidden;
     transition: overflown 0.5 ease;
     left: 0;    
@@ -76,9 +81,16 @@ header {
       
         overflow:visible;
 
+        #cv-link{
+          width: 20%;
+          margin-top: 25px;
+          margin-bottom: 30px;
+          height: 100px;
+        }
         ul{
-          background-color: #59c3c3;
+          background-color: $primary-color;
           width: 100%;
+          border-bottom: $tertiary-color;
         }
       
       
@@ -99,31 +111,54 @@ header {
 
       @include media-max(768px) {
         flex-direction: column;
-        height: 500%;        
+        height: 500%; 
+      }
+
+      #cv-link{
+        background-color: $secondary-color;
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        color: $primary-color;
+        font-family: "RobotoBold";
       }
 
       li {
         display: flex;
-        margin-right: 10px;
         height: 80%;
         width: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         &.active{
-          border: $tertiary-color solid;
+          border: $secondary-color solid;
           border-radius: 20px;
+
+          a{
+            color: $secondary-color;
+          }
         }
 
         @include media-max(768px) {
           border: none !important;
-          width: 70%;
+          width: 100%;
+          
+
           &.active{
             order:-1;
+            a{
+              color: $tertiary-color;
+
+            }
           }
           a{
-            font-size: larger;
+            font-size: 2rem;
+            width: 100%;
           }
           /*&:nth-child(2){
             display: none;
@@ -261,6 +296,19 @@ main{
     align-items: center;
     flex-wrap: wrap;
     width: 70vw;
+
+    h2{
+      margin: 20px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    .not-displayed{
+      display: none;
+    }
+    
     .projet{
       width: 300px;
       height: 200px;

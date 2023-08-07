@@ -12,11 +12,11 @@
         <a href="#"><h1>NLJ</h1></a>
         <nav id="header-nav">
             <ul>
-                <li ><a href="#">Accueil</a></li>
-                <li ><a href="#a-propos-de-moi">À propos de moi</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="CV - Développeur web.pdf">CV</a></li>
+                <li ><a class="headerLinks" href="#">Accueil</a></li>
+                <li ><a class="headerLinks" href="#a-propos-de-moi">À propos de moi</a></li>
+                <li><a class="headerLinks" href="#projets">Projets</a></li>
+                <li><a class="headerLinks" href="#contact">Contact</a></li>
+                <li><a class="headerLinks" id="cv-link" href="CV - Développeur web.pdf">CV</a></li>
             </ul>
         </nav>
         <div id="mobile-menu"></div>
@@ -67,29 +67,70 @@
             
         </section>
         <section id="projets">
-            <div class="projet">
-                <img src="images\ohmyfood.png" alt="ohmyfood">
-                <div class="details">
-                    <p>c'est un super projet. super cool. j'adore manger des bonbons</p>
-                    <a href="#">liens vers le projet</a>
+            <h2 class="projects-type" id="webDisplay">Web</h2>
+            <h2 class="projects-type" id="gamingDisplay">Gaming</h2>
+            <div id="web">
+                <div class="projet">
+                    <img src="images\ohmyfood.png" alt="ohmyfood">
+                    <div class="details">
+                        <p>Développement d'un site "mobile first" de réservation de restaurant</p>
+                        <a href="https://github.com/Pangzidao/Projet3">Code source</a>
+                        <a href="https://pangzidao.github.io/Projet3/">Site</a>
+                    </div>
                 </div>
-                
+                <div class="projet">
+                    <img src="./images/booki.png" alt="booki">
+                    <div class="details">
+                        <p>Intégration d'une maquette pour un site de réservation d'hébergement de vacances</p>
+                        <a href="https://github.com/Pangzidao/Projet2_Le-Jeune_Nicolas">Code source</a>
+                        <a href="https://pangzidao.github.io/Nouveau-Projet2/">Site</a>
+                    </div>
+                </div>
+                <div class="projet">
+                    <img src="./images/kasa.png" alt="kasa">
+                    <div class="details">
+                        <p>Développement d'une application web avec React et React Router</p>
+                        <a href="https://pangzidao.github.io/kasa-app/">Site</a>
+                    </div>
+                </div>
+                <div class="projet">
+                    <img src="./images/learnathome.png" alt="learnathome">
+                    <div class="details">
+                        <p>réalisation d'une maquette pour un site de soutien scolaire</p>
+                        <a href="https://www.figma.com/file/Qnps4dVf2JCQPKXSlYiKgA/Learn%40Home?type=design&node-id=0-1&mode=design&t=aDhzaUaIURuewk1k-0">Maquette</a>
+                    </div>
+                </div>
+                <div class="projet">
+                    <img src="./images/hrnet.png" alt="hrnet">
+                    <div class="details">
+                        <p>Conversion d'une bibliotheque jQuery vers React</p>
+                        <a href="https://github.com/Pangzidao/hrnet/">Code source</a>
+                        <a href="https://www.npmjs.com/package/@pangzidao/my-table-component">Composant Tableau</a>
+                    </div>
+                </div>
+               
             </div>
-            <div class="projet">
-                
+            <div id="gaming">
+                <div class="projet">
+                    <img src="./images/gravitus.png" alt="gravitus">
+                    <div class="details">
+                        <a href="https://stupid-robot.itch.io/gravitus">Play</a>
+                    </div>
+                </div>
+                <div class="projet">
+                    <img src="./images/spinUp.png" alt="spinUp">
+                    <div class="details">
+                        <a href="https://stupid-robot.itch.io/spin-up">Play</a>
+                    </div>
+                </div>
+                <div class="projet">
+                    <img src="./images/pacman.png" alt="gravitus">
+                    <div class="details">
+                        <a href="https://stupid-robot.itch.io/pacman-loves-beans">Play</a>
+                    </div>
+                </div>
             </div>
-            <div class="projet">
-                
-            </div>
-            <div class="projet">
-                
-            </div>
-            <div class="projet">
-                
-            </div>
-            <div class="projet">
-                
-            </div>
+     
         </section>
         
         <section id="contact">
