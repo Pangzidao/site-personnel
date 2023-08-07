@@ -105,8 +105,6 @@ header {
       height: 100%;
       display: flex;
       justify-content: space-around;
-      display: flex;
-      justify-content: space-around;
       align-items: center;
 
       @include media-max(768px) {
@@ -178,10 +176,10 @@ header {
     display: none;
     @include media-max(768px){
       display: block;
-      color: #ebebeb;
+      color: $secondary-color;
       font-size: 32px;
       position: absolute;
-      right: 100px;      
+      right: 50px;      
     }
   }
 }

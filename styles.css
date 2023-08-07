@@ -83,8 +83,6 @@ header nav ul {
   height: 100%;
   display: flex;
   justify-content: space-around;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 @media screen and (max-width: 768px) {
@@ -151,10 +149,10 @@ header #mobile-menu {
 @media screen and (max-width: 768px) {
   header #mobile-menu {
     display: block;
-    color: #ebebeb;
+    color: #64FFDA;
     font-size: 32px;
     position: absolute;
-    right: 100px;
+    right: 50px;
   }
 }
 
