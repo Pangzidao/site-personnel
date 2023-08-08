@@ -59,7 +59,7 @@ header {
 
   h1{
     color: $secondary-color;
-    margin-left: 50px;
+    margin-left: 5%;
   }
 
   nav {
@@ -141,8 +141,7 @@ header {
 
         @include media-max(768px) {
           border: none !important;
-          width: 100%;
-          
+          width: 100%;          
 
           &.active{
             order:-1;
@@ -152,7 +151,7 @@ header {
             }
           }
           a{
-            font-size: 2rem;
+            font-size: 1.5em;
             width: 100%;
           }
           /*&:nth-child(2){
@@ -176,7 +175,7 @@ header {
       color: $secondary-color;
       font-size: 32px;
       position: absolute;
-      right: 50px;      
+      right: 5%;      
     }
   }
 }
@@ -226,26 +225,59 @@ main{
       margin-bottom: 125px;
     }
   }
-
+  section {
+    padding: 20px;
+    margin-bottom: 30px;
+    padding-top:150px;
+    width: 70vw;
+    @include media-max(768px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
   #hero{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border: #ebebeb solid;
+
+    div{
+      margin: 20px;
+      @include media-max(768px) {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        
+      }
+    }
     h2{
-      font-size: 4vw;
+      font-size: 4rem;
       color: $tertiary-color;
+      text-align: center;
+      @include media-max(430px) {
+        font-size: 10vw;
+      }
     }
    
     p{
       color: $secondary-color;
       margin: 0;
-      font-size: 1.5vw;
+      font-size: 1.5rem;
+      text-align: center;
+      @include media-max(430px) {
+        font-size: 6vw;
+      }
       &:nth-of-type(2){
-        font-size: 2vw;
+        font-size: 2rem;
         font-family: "RobotoBold";
         color: $quaternary-color;
+        @include media-max(430px) {
+          font-size: 7vw;
+        }
       }
     }
     #wheelPictureContainer{
@@ -265,31 +297,43 @@ main{
 
    
   }
-  section {
-    padding: 20px;
-    margin-bottom: 30px;
-    padding-top:200px;
-    width: 70vw;
-    min-height: 70vh;
-  }
+ 
 
   #a-propos-de-moi{
     #profil{
       display: flex;
       margin-bottom: 50px;
+      align-items: center;
+     @include media-max(768px) {
+        flex-direction: column;
+        align-items: center; 
+
+        img{
+          flex-basis: content;
+        }
+
+        p{
+          text-align: center;
+        }
+      }
+
       p{
         margin-right: 10%;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color:$quaternary-color;
+
       }
+
+      
       
     }
     #competences{
-      h3{
-        text-align: center;
-      }
       ul{
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         li{
           text-decoration: none;
           font-size: 64px;
@@ -300,20 +344,50 @@ main{
   }
 
   #projets{
-    border: #ebebeb solid;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 70vw;
 
-    h2{
-      margin: 20px;
+    @include media-max(768px) {
+      flex-direction: column;
+      align-items: center; 
+      width: 100%;
+    }
 
-      &:hover{
-        cursor: pointer;
+    #projets-selection{
+      display: flex;
+      .projects-type{
+        margin: 20px;
+        width: 120px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+
+  
+        &:hover{
+          cursor: pointer;
+        }
+
+        &.highlighted{
+          background-color: $secondary-color;
+          color: $primary-color;
+        }
       }
     }
+
+
+    .projects-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+   
 
     .not-displayed{
       display: none;
@@ -321,20 +395,30 @@ main{
     
     .projet{
       width: 300px;
-      height: 200px;
+      height: 250px;
       border: #ebebeb solid;
       margin: 10px;
       overflow: hidden;
       border-radius: 10px;
       position: relative;
-      img{
-        max-width: 100%;
-        position: absolute;
-        
+      object-fit: cover;
+      object-position: center;
+
+      @include media-max(768px) {
+        margin-left: 0;
+        margin-right: 0;
       }
+
+      img{
+        max-width: 400px;
+        min-width: 100%;
+        min-height: 100%;
+        max-height: 400%;
+      }
+
       &.details{
         img{
-          filter: brightness(10%);
+          filter: brightness(20%);
           z-index: 0;
         }
         .details{
@@ -345,23 +429,52 @@ main{
           left: 0px;
           z-index: 1;
           top: 0px;
-          color:$secondary-color;
           display: flex;
           justify-content: space-between;
           align-content: center;
           flex-direction: column;
           border: #ebebeb solid;
+          h3{
+            text-align: center;
+            margin-top: 5px;
+            color: $tertiary-color;
+            font-size: 1.5rem;
+            font-family: "RobotoBold";
+            text-decoration: underline;
+
+          }
           p{
             margin: 20px;
+            margin-top:0;
+            margin-bottom: 0;
+            color:$tertiary-color;
+
           }
-          a{
-            text-align: center;
-            background-color: $secondary-color;
-            width: 100%;
-            height: 50px;
+          .tech-icons{
+            color: $tertiary-color;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-around;
+            i{
+              font-size: 2rem;
+            }
+          }
+          .project-links{
+            display: flex;
+            justify-content: space-around;
+
+            a{
+              text-align: center;
+              background-color: $secondary-color;
+              margin: 10px;
+              width: 125px;
+              height: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 20px;
+              color: $primary-color;
+              font-family: "RobotoBold";
+            }
           }
         }
       }
@@ -371,20 +484,46 @@ main{
 
   #contact{
     color: $tertiary-color;
-    border: #ebebeb solid;
     form{
-      border: #ebebeb solid;
       display: flex;
       flex-direction: column;
+      width: 100%;
+      align-items: center;
+
       label{
         display: flex;
         flex-direction: column;
         margin: 10px;
+        color: $quaternary-color;
+        width: 100%;
+
+        #email-input{
+          border: $quaternary-color solid 4px;
+          border-radius: 10px;
+          height: 30px;
+        }
+
+        #message-input{
+          border: $quaternary-color solid 4px;
+          border-radius: 10px;
+          height: 200px;
+        }
+
       }
       button{
         margin:10px;
+        background-color: $secondary-color;
+        border: none;
+        height: 50px;
+        width: 200px;
+        border-radius: 15px;
+        color: $primary-color;
+        font-family: "RobotoBold";
+        font-size: 1.2rem;
+
       }
-    }    
+    }
+        
   }
 }
 

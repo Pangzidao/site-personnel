@@ -44,7 +44,7 @@ header {
 }
 header h1 {
   color: #64FFDA;
-  margin-left: 50px;
+  margin-left: 5%;
 }
 header nav {
   height: 100%;
@@ -138,7 +138,7 @@ header nav ul li.active a {
     color: #ebebeb;
   }
   header nav ul li a {
-    font-size: 2rem;
+    font-size: 1.5em;
     width: 100%;
   }
 }
@@ -151,7 +151,7 @@ header #mobile-menu {
     color: #64FFDA;
     font-size: 32px;
     position: absolute;
-    right: 50px;
+    right: 5%;
   }
 }
 
@@ -198,26 +198,68 @@ main #email a {
   transform: rotate(0.25turn);
   margin-bottom: 125px;
 }
+main section {
+  padding: 20px;
+  margin-bottom: 30px;
+  padding-top: 150px;
+  width: 70vw;
+}
+@media screen and (max-width: 768px) {
+  main section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 main #hero {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: #ebebeb solid;
+}
+main #hero div {
+  margin: 20px;
+}
+@media screen and (max-width: 768px) {
+  main #hero div {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
 }
 main #hero h2 {
-  font-size: 4vw;
+  font-size: 4rem;
   color: #ebebeb;
+  text-align: center;
+}
+@media screen and (max-width: 430px) {
+  main #hero h2 {
+    font-size: 10vw;
+  }
 }
 main #hero p {
   color: #64FFDA;
   margin: 0;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
+  text-align: center;
+}
+@media screen and (max-width: 430px) {
+  main #hero p {
+    font-size: 6vw;
+  }
 }
 main #hero p:nth-of-type(2) {
-  font-size: 2vw;
+  font-size: 2rem;
   font-family: "RobotoBold";
   color: #8892B0;
+}
+@media screen and (max-width: 430px) {
+  main #hero p:nth-of-type(2) {
+    font-size: 7vw;
+  }
 }
 main #hero #wheelPictureContainer {
   border: #ebebeb solid 8px;
@@ -234,27 +276,34 @@ main #hero #wheelPictureContainer {
 main #hero #wheelPictureContainer img {
   height: 100%;
 }
-main section {
-  padding: 20px;
-  margin-bottom: 30px;
-  padding-top: 200px;
-  width: 70vw;
-  min-height: 70vh;
-}
 main #a-propos-de-moi #profil {
   display: flex;
   margin-bottom: 50px;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  main #a-propos-de-moi #profil {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #a-propos-de-moi #profil img {
+    flex-basis: content;
+  }
+  main #a-propos-de-moi #profil p {
+    text-align: center;
+  }
 }
 main #a-propos-de-moi #profil p {
   margin-right: 10%;
-}
-main #a-propos-de-moi #competences h3 {
-  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #8892B0;
 }
 main #a-propos-de-moi #competences ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 main #a-propos-de-moi #competences ul li {
   text-decoration: none;
@@ -262,37 +311,75 @@ main #a-propos-de-moi #competences ul li {
   margin: 10px;
 }
 main #projets {
-  border: #ebebeb solid;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 70vw;
 }
-main #projets h2 {
-  margin: 20px;
+@media screen and (max-width: 768px) {
+  main #projets {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }
-main #projets h2:hover {
+main #projets #projets-selection {
+  display: flex;
+}
+main #projets #projets-selection .projects-type {
+  margin: 20px;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+main #projets #projets-selection .projects-type:hover {
   cursor: pointer;
+}
+main #projets #projets-selection .projects-type.highlighted {
+  background-color: #64FFDA;
+  color: #011627;
+}
+main #projets .projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 main #projets .not-displayed {
   display: none;
 }
 main #projets .projet {
   width: 300px;
-  height: 200px;
+  height: 250px;
   border: #ebebeb solid;
   margin: 10px;
   overflow: hidden;
   border-radius: 10px;
   position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media screen and (max-width: 768px) {
+  main #projets .projet {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 main #projets .projet img {
-  max-width: 100%;
-  position: absolute;
+  max-width: 400px;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 400%;
 }
 main #projets .projet.details img {
-  filter: brightness(10%);
+  filter: brightness(20%);
   z-index: 0;
 }
 main #projets .projet.details .details {
@@ -303,41 +390,87 @@ main #projets .projet.details .details {
   left: 0px;
   z-index: 1;
   top: 0px;
-  color: #64FFDA;
   display: flex;
   justify-content: space-between;
   align-content: center;
   flex-direction: column;
   border: #ebebeb solid;
 }
+main #projets .projet.details .details h3 {
+  text-align: center;
+  margin-top: 5px;
+  color: #ebebeb;
+  font-size: 1.5rem;
+  font-family: "RobotoBold";
+  text-decoration: underline;
+}
 main #projets .projet.details .details p {
   margin: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #ebebeb;
 }
-main #projets .projet.details .details a {
+main #projets .projet.details .details .tech-icons {
+  color: #ebebeb;
+  display: flex;
+  justify-content: space-around;
+}
+main #projets .projet.details .details .tech-icons i {
+  font-size: 2rem;
+}
+main #projets .projet.details .details .project-links {
+  display: flex;
+  justify-content: space-around;
+}
+main #projets .projet.details .details .project-links a {
   text-align: center;
   background-color: #64FFDA;
-  width: 100%;
+  margin: 10px;
+  width: 125px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+  color: #011627;
+  font-family: "RobotoBold";
 }
 main #contact {
   color: #ebebeb;
-  border: #ebebeb solid;
 }
 main #contact form {
-  border: #ebebeb solid;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 main #contact form label {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  color: #8892B0;
+  width: 100%;
+}
+main #contact form label #email-input {
+  border: #8892B0 solid 4px;
+  border-radius: 10px;
+  height: 30px;
+}
+main #contact form label #message-input {
+  border: #8892B0 solid 4px;
+  border-radius: 10px;
+  height: 200px;
 }
 main #contact form button {
   margin: 10px;
+  background-color: #64FFDA;
+  border: none;
+  height: 50px;
+  width: 200px;
+  border-radius: 15px;
+  color: #011627;
+  font-family: "RobotoBold";
+  font-size: 1.2rem;
 }
 
 /* Sections */

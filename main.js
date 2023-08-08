@@ -14,14 +14,14 @@ const gamingSectionDom = document.getElementById("gaming")
 const mainDom = document.getElementsByTagName("main")[0]
 
 
-projectsDisplay("webDisplay")
+projectsDisplay(projectsTypeDom[0])
 links[0].classList.add("active");
 
 mobileMenuDom.addEventListener("click", () => mobileMenuDisplay());
 
 projets.forEach(p => p.addEventListener("mouseover", () => projetDetails(p)));
 projets.forEach(p => p.addEventListener("mouseout", () => projetDetails()));
-projectsTypeDom.forEach(p => p.addEventListener("click", ()=> projectsDisplay(p.id)));
+projectsTypeDom.forEach(p => p.addEventListener("click", ()=> projectsDisplay(p)));
 
 const sectionsPos = []
 
@@ -30,14 +30,18 @@ let navMenuDrop = false
 mobileMenuDom.innerHTML = '<i class="fa-solid fa-bars"></i>'
 
 function projectsDisplay(p){
-    if (p == "webDisplay"){
+    if (p.id == "webDisplay"){
         console.log("display web")
+        projectsTypeDom[0].classList.add("highlighted")
+        projectsTypeDom[1].classList.remove("highlighted")
         webSectionDom.classList.remove("not-displayed")
         gamingSectionDom.classList.add("not-displayed")
     }
 
-    if (p == "gamingDisplay"){
+    if (p.id == "gamingDisplay"){
         console.log("display gaming")
+        projectsTypeDom[1].classList.add("highlighted")
+        projectsTypeDom[0].classList.remove("highlighted")
         webSectionDom.classList.add("not-displayed")
         gamingSectionDom.classList.remove("not-displayed")
     }
@@ -79,7 +83,7 @@ function scrolling(){
 
 links.forEach(l => l.addEventListener('click', ()=> {
     scrolling()
-    if (window.innerWidth < 768){
+    if (window.innerWidth < 800){
         mobileMenuDisplay()
     }    
 }))
