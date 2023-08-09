@@ -70,6 +70,14 @@ header nav {
     margin-bottom: 30px;
     height: 100px;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 768px) {
+  header nav.header-nav-dropdown #cv-link {
+    height: 80px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
   header nav.header-nav-dropdown ul {
     background-color: #011627;
     width: 100%;
@@ -390,7 +398,7 @@ main #projets .projet img {
   max-width: 400px;
   min-width: 100%;
   min-height: 100%;
-  max-height: 400%;
+  max-height: 200%;
 }
 main #projets .projet.details img {
   filter: brightness(20%);

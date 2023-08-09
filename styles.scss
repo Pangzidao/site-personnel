@@ -86,6 +86,10 @@ header {
           margin-top: 25px;
           margin-bottom: 30px;
           height: 100px;
+          @include media-max(768px){
+            height: 80px;
+            width: 100px;
+          }
         }
         ul{
           background-color: $primary-color;
@@ -428,7 +432,7 @@ main{
         max-width: 400px;
         min-width: 100%;
         min-height: 100%;
-        max-height: 400%;
+        max-height: 200%;
       }
 
       &.details{
