@@ -76,7 +76,6 @@ window.addEventListener("scroll", () => scrolling())
 
 function scrolling(){
     sections.forEach((section, i) =>{
-        console.log(section.getBoundingClientRect().top )
         if (section.getBoundingClientRect().top < 400 && section.getBoundingClientRect().top > -400){
             currentSection(links[i])
         }
