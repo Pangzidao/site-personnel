@@ -73,6 +73,7 @@ header nav {
     background-color: #011627;
     width: 100%;
     border-bottom: #ebebeb;
+    margin-top: 5px;
   }
 }
 header nav ul {
@@ -93,7 +94,7 @@ header nav ul {
 header nav ul #cv-link {
   background-color: #64FFDA;
   height: 100%;
-  width: 100px;
+  min-width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +200,6 @@ main #email a {
   margin-bottom: 125px;
 }
 main section {
-  padding: 20px;
   margin-bottom: 30px;
   padding-top: 150px;
   width: 70vw;
@@ -211,6 +211,7 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 20px;
   }
 }
 main #hero {
@@ -227,7 +228,6 @@ main #hero div {
   main #hero div {
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
   }
 }
 main #hero h2 {
@@ -237,7 +237,7 @@ main #hero h2 {
 }
 @media screen and (max-width: 430px) {
   main #hero h2 {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
 main #hero p {
@@ -248,7 +248,7 @@ main #hero p {
 }
 @media screen and (max-width: 430px) {
   main #hero p {
-    font-size: 6vw;
+    font-size: 4vw;
   }
 }
 main #hero p:nth-of-type(2) {
@@ -258,7 +258,7 @@ main #hero p:nth-of-type(2) {
 }
 @media screen and (max-width: 430px) {
   main #hero p:nth-of-type(2) {
-    font-size: 7vw;
+    font-size: 6vw;
   }
 }
 main #hero #wheelPictureContainer {
@@ -298,6 +298,19 @@ main #a-propos-de-moi #profil p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #8892B0;
+}
+@media screen and (max-width: 768px) {
+  main #a-propos-de-moi #profil p {
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 430px) {
+  main #a-propos-de-moi #profil p {
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 5vw;
+  }
 }
 main #a-propos-de-moi #competences ul {
   list-style: none;
@@ -365,12 +378,6 @@ main #projets .projet {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-}
-@media screen and (max-width: 768px) {
-  main #projets .projet {
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 main #projets .projet img {
   max-width: 400px;
@@ -441,7 +448,7 @@ main #contact {
 main #contact form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   align-items: center;
 }
 main #contact form label {

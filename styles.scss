@@ -88,6 +88,7 @@ header {
           background-color: $primary-color;
           width: 100%;
           border-bottom: $tertiary-color;
+          margin-top: 5px;
         }
       
       
@@ -112,7 +113,7 @@ header {
       #cv-link{
         background-color: $secondary-color;
         height: 100%;
-        width: 100px;
+        min-width: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -226,16 +227,17 @@ main{
     }
   }
   section {
-    padding: 20px;
     margin-bottom: 30px;
     padding-top:150px;
     width: 70vw;
+
     @include media-max(768px) {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-left: 20px;
     }
   }
   #hero{
@@ -250,7 +252,6 @@ main{
       @include media-max(768px) {
         margin-left: 0;
         margin-right: 0;
-        width: 100%;
         
       }
     }
@@ -259,7 +260,7 @@ main{
       color: $tertiary-color;
       text-align: center;
       @include media-max(430px) {
-        font-size: 10vw;
+        font-size: 8vw;
       }
     }
    
@@ -269,14 +270,14 @@ main{
       font-size: 1.5rem;
       text-align: center;
       @include media-max(430px) {
-        font-size: 6vw;
+        font-size: 4vw;
       }
       &:nth-of-type(2){
         font-size: 2rem;
         font-family: "RobotoBold";
         color: $quaternary-color;
         @include media-max(430px) {
-          font-size: 7vw;
+          font-size: 6vw;
         }
       }
     }
@@ -322,7 +323,18 @@ main{
         font-size: 1.2rem;
         margin-bottom: 20px;
         color:$quaternary-color;
+        @include media-max(768px) {
+          margin-right: 5%;
+          margin-left: 5%;
+ 
+        }
 
+        @include media-max(430px) {
+          margin-right: 5%;
+          margin-left: 5%;
+          font-size: 5vw;
+ 
+        }
       }
 
       
@@ -404,11 +416,6 @@ main{
       object-fit: cover;
       object-position: center;
 
-      @include media-max(768px) {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
       img{
         max-width: 400px;
         min-width: 100%;
@@ -487,7 +494,7 @@ main{
     form{
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 90%;
       align-items: center;
 
       label{

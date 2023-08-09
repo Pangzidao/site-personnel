@@ -13,6 +13,7 @@ const webSectionDom = document.getElementById("web")
 const gamingSectionDom = document.getElementById("gaming")
 const mainDom = document.getElementsByTagName("main")[0]
 
+console.log(sections[0].getBoundingClientRect())
 
 projectsDisplay(projectsTypeDom[0])
 links[0].classList.add("active");
@@ -74,11 +75,17 @@ sections.forEach(section => sectionsPos.push(section.offsetTop))
 window.addEventListener("scroll", () => scrolling())
 
 function scrolling(){
-    sectionsPos.map((sectionPos, i) => {
-        if (scrollY +400 > sectionPos){
+    sections.forEach((section, i) =>{
+        console.log(section.getBoundingClientRect().top )
+        if (section.getBoundingClientRect().top < 400 && section.getBoundingClientRect().top > -400){
             currentSection(links[i])
         }
     })
+    /*sectionsPos.map((sectionPos, i) => {
+        if (scrollY + 400 > sectionPos){
+            currentSection(links[i])
+        }
+    })*/
 }
 
 links.forEach(l => l.addEventListener('click', ()=> {
