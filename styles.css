@@ -444,6 +444,10 @@ main #projets .projet.details .details .project-links a {
 }
 main #contact {
   color: #ebebeb;
+  border: #64FFDA solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main #contact form {
   display: flex;
