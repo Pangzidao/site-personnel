@@ -349,7 +349,8 @@ main{
         li{
           text-decoration: none;
           font-size: 64px;
-          margin: 10px;
+          margin-left: 2vw;
+          margin-right: 2vw;
         }
       }
     }
@@ -491,7 +492,6 @@ main{
 
   #contact{
     color: $tertiary-color;
-    border: #64FFDA solid;
     display: flex;
     align-items: center;
     justify-content: center;
