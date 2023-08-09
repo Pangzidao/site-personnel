@@ -47,20 +47,23 @@ h2, h3 ,p, a, li, img {
 /* En-tête */
 header {
   background-color: $primary-color;
-  padding: 1%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   z-index: 3;
 
-  h1{
-    color: $secondary-color;
+  #logo{
     margin-left: 5%;
+
+    h1{
+      color: $secondary-color;
+    }
   }
+  
 
   nav {
     height: 100%;
@@ -154,6 +157,10 @@ header {
           a{
             font-size: 1.5em;
             width: 100%;
+
+            @include media-max(430px) {
+              font-size: 1.2rem;
+            }
           }
           /*&:nth-child(2){
             display: none;
@@ -345,6 +352,7 @@ main{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        padding: 0;
         li{
           text-decoration: none;
           font-size: 64px;
