@@ -1,6 +1,5 @@
 console.log("hello world!");
 
-//Dom selection 
 const links = document.querySelectorAll("li")
 const wheelPictureDom = document.getElementById("wheelPicture")
 const projectsSectionDom = document.getElementById("projets")
