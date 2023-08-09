@@ -70,7 +70,6 @@ sections.forEach(section => sectionsPos.push(section.offsetTop))
     top:sectionsPos[1],
     behavior:"smooth"
 })*/
-/**/
 
 window.addEventListener("scroll", () => scrolling())
 
